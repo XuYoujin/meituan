@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "YTNavigationController.h"
 #import "YTShopController.h"
-
 
 
 
@@ -31,7 +31,7 @@
     YTShopController *shopVC = [[YTShopController alloc] init];
     
     //设置商家控制器为导航控制器的根控制器
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:shopVC];
+    YTNavigationController *navi = [[YTNavigationController alloc] initWithRootViewController:shopVC];
     
     
     //设置导航控制器为window的根控制器

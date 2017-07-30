@@ -48,6 +48,8 @@
 		CB3D08AE1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D088B1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m */; };
 		CB3D08B31F2E0D33006C51A0 /* YTShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B21F2E0D33006C51A0 /* YTShopController.m */; };
 		CB3D08B61F2E0D4B006C51A0 /* YTFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B51F2E0D4B006C51A0 /* YTFoodDetailController.m */; };
+		CB3D08B91F2E1313006C51A0 /* YTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */; };
+		CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +142,10 @@
 		CB3D08B21F2E0D33006C51A0 /* YTShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopController.m; sourceTree = "<group>"; };
 		CB3D08B41F2E0D4B006C51A0 /* YTFoodDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTFoodDetailController.h; sourceTree = "<group>"; };
 		CB3D08B51F2E0D4B006C51A0 /* YTFoodDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTFoodDetailController.m; sourceTree = "<group>"; };
+		CB3D08B71F2E1313006C51A0 /* YTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavigationController.h; sourceTree = "<group>"; };
+		CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavigationController.m; sourceTree = "<group>"; };
+		CB3D08BA1F2E13CA006C51A0 /* YTBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTBaseController.h; sourceTree = "<group>"; };
+		CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBaseController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +256,10 @@
 		CB3D083B1F2E0A82006C51A0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CB3D08B71F2E1313006C51A0 /* YTNavigationController.h */,
+				CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */,
+				CB3D08BA1F2E13CA006C51A0 /* YTBaseController.h */,
+				CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -427,6 +437,7 @@
 				CB3D088C1F2E0ACA006C51A0 /* AFHTTPSessionManager.m in Sources */,
 				CB3D08A51F2E0ACA006C51A0 /* SDWebImageManager.m in Sources */,
 				CB3D08A11F2E0ACA006C51A0 /* SDWebImageCompat.m in Sources */,
+				CB3D08B91F2E1313006C51A0 /* YTNavigationController.m in Sources */,
 				CB3D08A61F2E0ACA006C51A0 /* SDWebImagePrefetcher.m in Sources */,
 				CB3D08911F2E0ACA006C51A0 /* AFURLSessionManager.m in Sources */,
 				CB3D08981F2E0ACA006C51A0 /* NSArray+MASAdditions.m in Sources */,
@@ -462,6 +473,7 @@
 				CB3D08AE1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m in Sources */,
 				CB3D081C1F2DFD22006C51A0 /* main.m in Sources */,
 				CB3D08961F2E0ACA006C51A0 /* MASViewAttribute.m in Sources */,
+				CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

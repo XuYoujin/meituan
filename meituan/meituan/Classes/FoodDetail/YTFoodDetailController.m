@@ -20,6 +20,8 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
+    self.navitem.title = @"商家详情";
+    
 }
 
 - (void)didReceiveMemoryWarning {

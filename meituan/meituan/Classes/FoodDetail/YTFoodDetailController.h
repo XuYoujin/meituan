@@ -6,8 +6,7 @@
 //  Copyright © 2017年 itcast. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface YTFoodDetailController : UIViewController
+#import "YTBaseController.h"
+@interface YTFoodDetailController : YTBaseController
 
 @end

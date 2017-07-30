@@ -7,7 +7,7 @@
 //
 
 #import "YTShopController.h"
-
+#import "YTFoodDetailController.h"
 @interface YTShopController ()
 
 @end
@@ -20,9 +20,19 @@
     
     self.view.backgroundColor = [UIColor yellowColor];
     
-    
+    self.navitem.title = @"商店";
     
 }
+
+//测试点击跳转下面界面
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    
+    YTFoodDetailController *foodDetailController = [[YTFoodDetailController alloc] init];
+    [self.navigationController pushViewController:foodDetailController animated:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
