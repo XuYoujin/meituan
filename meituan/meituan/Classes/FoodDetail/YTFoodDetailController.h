@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  YTFoodDetailController.h
 //  meituan
 //
 //  Created by 徐友金 on 2017/7/30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface YTFoodDetailController : UIViewController
 
 @end
-
