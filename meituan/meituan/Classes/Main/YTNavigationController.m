@@ -49,6 +49,13 @@
 }
 
 
+//让栈顶控制器能改变导航条
+- (UIViewController *)childViewControllerForStatusBarStyle
+{
+    return self.topViewController;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

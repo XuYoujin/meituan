@@ -7,7 +7,7 @@
 //
 
 #import "YTBaseController.h"
-
+#import "YTNavigationBar.h"
 @interface YTBaseController ()
 
 @end
@@ -19,10 +19,10 @@
     // Do any additional setup after loading the view.
     
     //添加在父控件上
-    [self.view addSubview:_navigationBar];
+    [self.view addSubview:_naviBar];
     
     //设置约束
-    [_navigationBar mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_naviBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.offset(0);
         make.height.offset(64);
         
@@ -40,7 +40,7 @@
     {
         //设置导航条
         
-        UINavigationBar *navigationBar = [[UINavigationBar alloc] init];
+        YTNavigationBar *navigationBar = [[YTNavigationBar alloc] init];
         
         
         //设置导航item
@@ -53,7 +53,7 @@
         
         
         //赋值
-        _navigationBar = navigationBar;
+        _naviBar = navigationBar;
         _navitem = item;
         
         
@@ -61,6 +61,21 @@
     }
     
     return self;
+}
+//重新set方法状态栏状态
+- (void)setStatusBarStyle:(UIStatusBarStyle)statusBarStyle
+{
+    _statusBarStyle = statusBarStyle;
+    
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+   
+}
+
+//设置状态栏样式 (只能通过方法设置状态栏)
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return _statusBarStyle;
 }
 
 

@@ -50,6 +50,8 @@
 		CB3D08B61F2E0D4B006C51A0 /* YTFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B51F2E0D4B006C51A0 /* YTFoodDetailController.m */; };
 		CB3D08B91F2E1313006C51A0 /* YTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */; };
 		CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */; };
+		CBAA4B3B1F2E355E00E23A49 /* YTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAA4B3A1F2E355E00E23A49 /* YTNavigationBar.m */; };
+		CBED4A611F2EA4AB00A64134 /* NSObject+LinearFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,6 +148,11 @@
 		CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavigationController.m; sourceTree = "<group>"; };
 		CB3D08BA1F2E13CA006C51A0 /* YTBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTBaseController.h; sourceTree = "<group>"; };
 		CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBaseController.m; sourceTree = "<group>"; };
+		CBAA4B391F2E355E00E23A49 /* YTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavigationBar.h; sourceTree = "<group>"; };
+		CBAA4B3A1F2E355E00E23A49 /* YTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavigationBar.m; sourceTree = "<group>"; };
+		CBED4A5F1F2EA4AB00A64134 /* NSObject+LinearFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LinearFormula.h"; sourceTree = "<group>"; };
+		CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LinearFormula.m"; sourceTree = "<group>"; };
+		CBED4A621F2EA59F00A64134 /* Additons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Additons.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +246,9 @@
 		CB3D08391F2E0A5B006C51A0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CBED4A5F1F2EA4AB00A64134 /* NSObject+LinearFormula.h */,
+				CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */,
+				CBED4A621F2EA59F00A64134 /* Additons.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -260,6 +270,8 @@
 				CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */,
 				CB3D08BA1F2E13CA006C51A0 /* YTBaseController.h */,
 				CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */,
+				CBAA4B391F2E355E00E23A49 /* YTNavigationBar.h */,
+				CBAA4B3A1F2E355E00E23A49 /* YTNavigationBar.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -445,6 +457,7 @@
 				CB3D08A71F2E0ACA006C51A0 /* UIButton+WebCache.m in Sources */,
 				CB3D08381F2E0832006C51A0 /* AppDelegate.m in Sources */,
 				CB3D089A1F2E0ACA006C51A0 /* View+MASAdditions.m in Sources */,
+				CBAA4B3B1F2E355E00E23A49 /* YTNavigationBar.m in Sources */,
 				CB3D08AA1F2E0ACA006C51A0 /* UIImage+WebP.m in Sources */,
 				CB3D08951F2E0ACA006C51A0 /* MASLayoutConstraint.m in Sources */,
 				CB3D089F1F2E0ACA006C51A0 /* SDImageCache.m in Sources */,
@@ -462,6 +475,7 @@
 				CB3D088F1F2E0ACA006C51A0 /* AFURLRequestSerialization.m in Sources */,
 				CB3D08A01F2E0ACA006C51A0 /* SDImageCacheConfig.m in Sources */,
 				CB3D08B31F2E0D33006C51A0 /* YTShopController.m in Sources */,
+				CBED4A611F2EA4AB00A64134 /* NSObject+LinearFormula.m in Sources */,
 				CB3D088D1F2E0ACA006C51A0 /* AFNetworkReachabilityManager.m in Sources */,
 				CB3D08901F2E0ACA006C51A0 /* AFURLResponseSerialization.m in Sources */,
 				CB3D08941F2E0ACA006C51A0 /* MASConstraintMaker.m in Sources */,
