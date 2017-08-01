@@ -12,6 +12,10 @@
 		CB07F74F1F2F8B9A00FF5AFC /* YTShopOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F74E1F2F8B9A00FF5AFC /* YTShopOrderController.m */; };
 		CB07F7521F2F8BAF00FF5AFC /* YTShopCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F7511F2F8BAF00FF5AFC /* YTShopCommentController.m */; };
 		CB07F7551F2F8BC700FF5AFC /* YTShopInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F7541F2F8BC700FF5AFC /* YTShopInfoController.m */; };
+		CB07F75B1F30259900FF5AFC /* YTShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F7581F30259900FF5AFC /* YTShopController.m */; };
+		CB07F75E1F3025D400FF5AFC /* YTShopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F75D1F3025D400FF5AFC /* YTShopView.m */; };
+		CB07F7601F3054A400FF5AFC /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = CB07F75F1F3054A400FF5AFC /* food.json */; };
+		CB07F7631F3059D100FF5AFC /* YTShopPoi_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F7621F3059D100FF5AFC /* YTShopPoi_infoModel.m */; };
 		CB3D081C1F2DFD22006C51A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D081B1F2DFD22006C51A0 /* main.m */; };
 		CB3D08271F2DFD22006C51A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3D08261F2DFD22006C51A0 /* Assets.xcassets */; };
 		CB3D082A1F2DFD22006C51A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3D08281F2DFD22006C51A0 /* LaunchScreen.storyboard */; };
@@ -51,7 +55,6 @@
 		CB3D08AC1F2E0ACA006C51A0 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08871F2E0ACA006C51A0 /* UIImageView+WebCache.m */; };
 		CB3D08AD1F2E0ACA006C51A0 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08891F2E0ACA006C51A0 /* UIView+WebCache.m */; };
 		CB3D08AE1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D088B1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m */; };
-		CB3D08B31F2E0D33006C51A0 /* YTShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B21F2E0D33006C51A0 /* YTShopController.m */; };
 		CB3D08B61F2E0D4B006C51A0 /* YTFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B51F2E0D4B006C51A0 /* YTFoodDetailController.m */; };
 		CB3D08B91F2E1313006C51A0 /* YTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */; };
 		CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */; };
@@ -70,6 +73,14 @@
 		CB07F7511F2F8BAF00FF5AFC /* YTShopCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopCommentController.m; sourceTree = "<group>"; };
 		CB07F7531F2F8BC700FF5AFC /* YTShopInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopInfoController.h; sourceTree = "<group>"; };
 		CB07F7541F2F8BC700FF5AFC /* YTShopInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopInfoController.m; sourceTree = "<group>"; };
+		CB07F7571F30259900FF5AFC /* YTShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopController.h; sourceTree = "<group>"; };
+		CB07F7581F30259900FF5AFC /* YTShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopController.m; sourceTree = "<group>"; };
+		CB07F75C1F3025D400FF5AFC /* YTShopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopView.h; sourceTree = "<group>"; };
+		CB07F75D1F3025D400FF5AFC /* YTShopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopView.m; sourceTree = "<group>"; };
+		CB07F75F1F3054A400FF5AFC /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
+		CB07F7611F3059D100FF5AFC /* YTShopPoi_infoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopPoi_infoModel.h; sourceTree = "<group>"; };
+		CB07F7621F3059D100FF5AFC /* YTShopPoi_infoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopPoi_infoModel.m; sourceTree = "<group>"; };
+		CB07F7641F305DE100FF5AFC /* YTMeiTuanPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTMeiTuanPrefixHeader.pch; sourceTree = "<group>"; };
 		CB3D08171F2DFD22006C51A0 /* meituan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meituan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3D081B1F2DFD22006C51A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CB3D08261F2DFD22006C51A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,9 +165,6 @@
 		CB3D08891F2E0ACA006C51A0 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		CB3D088A1F2E0ACA006C51A0 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		CB3D088B1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		CB3D08B01F2E0BCE006C51A0 /* YTMeiTuanPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YTMeiTuanPrefixHeader.pch; path = ../YTMeiTuanPrefixHeader.pch; sourceTree = "<group>"; };
-		CB3D08B11F2E0D33006C51A0 /* YTShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopController.h; sourceTree = "<group>"; };
-		CB3D08B21F2E0D33006C51A0 /* YTShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopController.m; sourceTree = "<group>"; };
 		CB3D08B41F2E0D4B006C51A0 /* YTFoodDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTFoodDetailController.h; sourceTree = "<group>"; };
 		CB3D08B51F2E0D4B006C51A0 /* YTFoodDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTFoodDetailController.m; sourceTree = "<group>"; };
 		CB3D08B71F2E1313006C51A0 /* YTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavigationController.h; sourceTree = "<group>"; };
@@ -209,6 +217,33 @@
 			path = meituan/Classes/ShopOrder;
 			sourceTree = SOURCE_ROOT;
 		};
+		CB07F7561F30259900FF5AFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB07F7571F30259900FF5AFC /* YTShopController.h */,
+				CB07F7581F30259900FF5AFC /* YTShopController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CB07F7591F30259900FF5AFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB07F7611F3059D100FF5AFC /* YTShopPoi_infoModel.h */,
+				CB07F7621F3059D100FF5AFC /* YTShopPoi_infoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB07F75A1F30259900FF5AFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB07F75C1F3025D400FF5AFC /* YTShopView.h */,
+				CB07F75D1F3025D400FF5AFC /* YTShopView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CB3D080E1F2DFD22006C51A0 = {
 			isa = PBXGroup;
 			children = (
@@ -243,8 +278,9 @@
 				CB3D08261F2DFD22006C51A0 /* Assets.xcassets */,
 				CB3D08281F2DFD22006C51A0 /* LaunchScreen.storyboard */,
 				CB3D082B1F2DFD22006C51A0 /* Info.plist */,
+				CB07F75F1F3054A400FF5AFC /* food.json */,
 				CB3D081B1F2DFD22006C51A0 /* main.m */,
-				CB3D08B01F2E0BCE006C51A0 /* YTMeiTuanPrefixHeader.pch */,
+				CB07F7641F305DE100FF5AFC /* YTMeiTuanPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -274,8 +310,9 @@
 		CB3D08341F2E0832006C51A0 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				CB3D08B11F2E0D33006C51A0 /* YTShopController.h */,
-				CB3D08B21F2E0D33006C51A0 /* YTShopController.m */,
+				CB07F7591F30259900FF5AFC /* Model */,
+				CB07F75A1F30259900FF5AFC /* View */,
+				CB07F7561F30259900FF5AFC /* Controller */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -483,6 +520,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB07F7601F3054A400FF5AFC /* food.json in Resources */,
 				CB3D082A1F2DFD22006C51A0 /* LaunchScreen.storyboard in Resources */,
 				CB3D08271F2DFD22006C51A0 /* Assets.xcassets in Resources */,
 			);
@@ -500,6 +538,7 @@
 				CB3D08A51F2E0ACA006C51A0 /* SDWebImageManager.m in Sources */,
 				CB3D08A11F2E0ACA006C51A0 /* SDWebImageCompat.m in Sources */,
 				CB3D08B91F2E1313006C51A0 /* YTNavigationController.m in Sources */,
+				CB07F7631F3059D100FF5AFC /* YTShopPoi_infoModel.m in Sources */,
 				CB3D08A61F2E0ACA006C51A0 /* SDWebImagePrefetcher.m in Sources */,
 				CB3D08911F2E0ACA006C51A0 /* AFURLSessionManager.m in Sources */,
 				CB07F7521F2F8BAF00FF5AFC /* YTShopCommentController.m in Sources */,
@@ -511,6 +550,7 @@
 				CB3D089A1F2E0ACA006C51A0 /* View+MASAdditions.m in Sources */,
 				CBAA4B3B1F2E355E00E23A49 /* YTNavigationBar.m in Sources */,
 				CB3D08AA1F2E0ACA006C51A0 /* UIImage+WebP.m in Sources */,
+				CB07F75E1F3025D400FF5AFC /* YTShopView.m in Sources */,
 				CB3D08951F2E0ACA006C51A0 /* MASLayoutConstraint.m in Sources */,
 				CB3D089F1F2E0ACA006C51A0 /* SDImageCache.m in Sources */,
 				CB3D08AD1F2E0ACA006C51A0 /* UIView+WebCache.m in Sources */,
@@ -526,7 +566,7 @@
 				CB3D08A41F2E0ACA006C51A0 /* SDWebImageDownloaderOperation.m in Sources */,
 				CB3D088F1F2E0ACA006C51A0 /* AFURLRequestSerialization.m in Sources */,
 				CB3D08A01F2E0ACA006C51A0 /* SDImageCacheConfig.m in Sources */,
-				CB3D08B31F2E0D33006C51A0 /* YTShopController.m in Sources */,
+				CB07F75B1F30259900FF5AFC /* YTShopController.m in Sources */,
 				CBED4A611F2EA4AB00A64134 /* NSObject+LinearFormula.m in Sources */,
 				CB3D088D1F2E0ACA006C51A0 /* AFNetworkReachabilityManager.m in Sources */,
 				CB3D08901F2E0ACA006C51A0 /* AFURLResponseSerialization.m in Sources */,

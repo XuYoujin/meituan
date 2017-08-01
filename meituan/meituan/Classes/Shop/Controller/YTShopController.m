@@ -15,34 +15,43 @@
 #import "YTShopCommentController.h"
 #import "YTShopInfoController.h"
 
-
+#import "YTShopView.h"
+#import "YTShopPoi_infoModel.h"
 
 //定义头部视图高度最大值和最小值
 #define KShopHeadViewMaxHeight 180
 #define KShopHeadViewMinHeight 64
 
 
-@interface YTShopController ()
+@interface YTShopController ()<UIScrollViewDelegate>
 //定义头部视图属性,方便后面平移使用
-@property (nonatomic,weak)UIView *shopHeadView;
+@property (nonatomic,weak)YTShopView *shopHeadView;
 //设置导航栏属性
 @property (nonatomic,strong)UIBarButtonItem *shareBtn;
 //设置标签视图属性
-@property (nonatomic,strong)UIView *shopTagView;
+@property (nonatomic,weak)UIView *shopTagView;
+//设置shop滚动视图属性
+@property (nonatomic,weak)UIScrollView *shopScrollView;//可能没有用
 
+//小黄条的属性
+@property (nonatomic,weak)UIView *shopTagLineView;
 
+//设置加载字典属性
+@property (nonatomic,strong)YTShopPoi_infoModel *shopPoi_infoModel;
 @end
 
 @implementation YTShopController
 
 - (void)viewDidLoad {
     
+    
+    
     [self setupUI];//投机写法
 
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor yellowColor];
+    //self.view.backgroundColor = [UIColor yellowColor];
     
     //设置导航条
     [self settingNavigationBar];
@@ -98,6 +107,10 @@
 #pragma mark - 设置主界面
 - (void)setupUI
 {
+    
+    //加载数据
+    [self loadFoodData];
+    
     //设置头部视图
     [self settingHeaderView];
     
@@ -172,11 +185,71 @@
     
     [shopScrollView.subviews mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
     
+    //设置代理
+    shopScrollView.delegate = self;
     
+    //赋值
+    _shopScrollView = shopScrollView;//可能没有用
+}
+
+#pragma mark - 滚动视图的代理方法,实现标签栏小黄条和滚动同步
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //NSLog(@"是是是");
+    //设置页数(小数)
+    CGFloat page = scrollView.contentOffset.x / scrollView.bounds.size.width;
+        //距离
+    CGFloat x = (_shopTagView.bounds.size.width) / (_shopTagView.subviews.count - 1);
     
+    //NSLog(@"%f",x);
+
+    //小黄条移动距离 (实现小黄条和滚动视图联动)
+    _shopTagLineView.transform = CGAffineTransformMakeTranslation(page * x, 0);
     
+    //_shopTagLineView.transform = CGAffineTransformTranslate(_shopTagLineView.transform,scrollView.contentOffset.x/scrollView.bounds.size.width * page, 0);
+
     
 }
+
+//手动拖拽结束后,实现此方法,设置字体:(等下看看老师的方法.理解下.)
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //设置页数(整数)
+    NSInteger page = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    
+    for (NSInteger i = 0; i < _shopTagView.subviews.count - 1; i++) {
+        
+        if (i == page) {
+            
+            UIButton *btn = _shopTagView.subviews[i];
+            
+            //设置字体
+            btn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+
+        
+        }
+        else
+        {
+            UIButton *btn = _shopTagView.subviews[i];
+            
+            //设置字体
+            btn.titleLabel.font = [UIFont systemFontOfSize:14];
+
+        }
+
+    }
+
+}
+
+//动漫结束后,实现此方法,设置点击按钮字体联动
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    [self scrollViewDidEndDecelerating:scrollView];
+}
+
+
+
 
 
 #pragma mark - 设置标签栏
@@ -201,9 +274,14 @@
     
    UIButton *orderBtn = [self makeShopTagViewButtonWithTitle:@"点菜"];
     
+    //默认第一个为粗体
+    orderBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    
     [self makeShopTagViewButtonWithTitle:@"评价"];
     
     [self makeShopTagViewButtonWithTitle:@"商家"];
+    
+    
     
     
     //设置约束
@@ -235,17 +313,13 @@
     }];
     
     
-    
-    
-    
-    
-    
-    
-    
+    //赋值小黄条
+    _shopTagLineView = shopTagLineView;
     
     
 }
 
+//根据名字创建自定义按钮的方法
 - (UIButton *)makeShopTagViewButtonWithTitle:(NSString *)title
 {
     UIButton *btn = [[UIButton alloc] init];
@@ -259,9 +333,16 @@
     //设置按钮的字体
     btn.titleLabel.font = [UIFont systemFontOfSize:14];
     
+    //给按钮添加监听事件
+    [btn addTarget:self action:@selector(TagViewBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //设置btn的tag.
+    btn.tag = _shopTagView.subviews.count;
+
     
     //添加到父控件中
     [_shopTagView addSubview:btn];
+    
     
     
     return btn;
@@ -270,14 +351,31 @@
     
 }
 
+#pragma mark - 点击标签栏按钮 响应事件
+- (void)TagViewBtnClick:(UIButton *)btn
+{
+    
+    
+    //滚动视图偏移距离 = 按钮的标签数 * 滚动视图的宽度
+    CGFloat offx = btn.tag * _shopScrollView.bounds.size.width;
+    
+    //点击滚动到响应视图
+    //_shopScrollView.contentOffset.x = offx;
+//    setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated;
+    CGPoint point = CGPointMake(offx, 0);
+    
+    [_shopScrollView setContentOffset:point animated:YES];
+}
+
+
 
 
 
 #pragma mark - 设置头部视图
 - (void)settingHeaderView
 {
-    UIView *shopHeadView = [[UIView alloc] init];
-    shopHeadView.backgroundColor = [UIColor greenColor];
+    YTShopView *shopHeadView = [[YTShopView alloc] init];
+    //shopHeadView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:shopHeadView];
     
     //设置约束
@@ -296,6 +394,14 @@
     
     //添加在View 身上
     [self.view addGestureRecognizer:pan];
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     //赋值
@@ -390,6 +496,41 @@
     
     
 }
+
+#pragma mark - 加载数据
+- (void)loadFoodData
+{
+    //nsdata
+    NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"food.json" withExtension:nil]];
+    
+    NSDictionary *foodDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    //取得想要自己数据
+    //data poi_info
+    NSDictionary *poi_dic = foodDict[@"data"][@"poi_info"];
+    
+    
+    //根据字典转模型,模型属性< 字典属性会报错
+    YTShopPoi_infoModel *shopPoi_infoModel = [YTShopPoi_infoModel shopPoi_infoWithDict:poi_dic];
+    
+    
+    _shopHeadView.shopPoi_infoModel = shopPoi_infoModel;
+    
+    
+    _shopPoi_infoModel = shopPoi_infoModel;
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 //- (CGFloat)resultWithConsult:(CGFloat)consult andConsult1:(CGFloat)consult1 andResult1:(CGFloat)result1 andConsult2:(CGFloat)consult2 andResult2:(CGFloat)result2
 //{
