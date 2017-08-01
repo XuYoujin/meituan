@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meituan/Classes/Shop/Controller/YTShopController.m"
-            timestampString = "523264840.836559"
+            filePath = "meituan/Common/LoopView/YTInfoLoopView.m"
+            timestampString = "523295546.399565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "517"
-            endingLineNumber = "517"
-            landmarkName = "-loadFoodData"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-settingData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "meituan/Classes/Shop/View/YTShopView.m"
-            timestampString = "523265630.288865"
+            filePath = "meituan/Common/LoopView/YTInfoLoopView.m"
+            timestampString = "523295546.399565"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "-setShopPoi_infoModel:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-setDiscounts:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

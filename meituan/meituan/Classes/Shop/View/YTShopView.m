@@ -10,13 +10,21 @@
 #import "Additons.h"
 
 #import "YTShopPoi_infoModel.h"
+#import "YTInfoLoopView.h"
 
 @interface YTShopView ()
 
 //设置轮播视图属性
-@property (nonatomic,weak)UIView *loopView;
+@property (nonatomic,weak)YTInfoLoopView *loopView;
 //设置背景图片属性
 @property (nonatomic,weak)UIImageView *bgImageView;
+//设置头像属性
+@property (nonatomic,weak)UIImageView *avatarImageView;
+//设置店名标签
+@property (nonatomic,weak)UILabel *nameLable;
+//设置商家公告
+@property (nonatomic,weak)UILabel *bulletinLabel;
+
 
 @end
 
@@ -57,11 +65,15 @@
         make.edges.offset(0);
     }];
     
-    
+#warning mark - 轮播视图 (注意...)
     ///设置轮播视图
-    UIView *loopView = [[UIView alloc] init];
+    YTInfoLoopView *loopView = [[YTInfoLoopView alloc] init];
     
-    loopView.backgroundColor = [UIColor lightGrayColor];
+    //loopView.backgroundColor = [UIColor lightGrayColor];
+    
+    //裁剪视图
+    loopView.clipsToBounds = YES;
+    
     
     [self addSubview:loopView];
     
@@ -75,9 +87,14 @@
         
     }];
     
-    ///设置需线
+//   loopView.infoModel = _shopPoi_infoModel.discounts[1];
+    
+    
+    
+    ///设置虚线
     UIView *dashLineView = [[UIView alloc] init];
-    dashLineView.backgroundColor = [UIColor whiteColor];
+    //dashLineView.backgroundColor = [UIColor whiteColor];
+    dashLineView.backgroundColor = [UIColor colorWithPatternImage:[UIImage dashLineViewWithColor:[UIColor whiteColor]]];
     
     [self addSubview:dashLineView];
     
@@ -147,27 +164,46 @@
     
     //属性赋值
     _bgImageView = imageView;
+    _avatarImageView = avatarView;
+    _nameLable = nameLable;
+    _bulletinLabel = bulletinLabel;
+    
+    //一句话没有赋值,整了很久,多注意思路哦.
+    _loopView = loopView;
     
 }
 
 
-//调用set模型方法,给背景图片赋值
+//调用set模型方法,给背景图片赋值  ----- 赋值给对应控制 传递数据
 - (void)setShopPoi_infoModel:(YTShopPoi_infoModel *)shopPoi_infoModel
 {
     _shopPoi_infoModel = shopPoi_infoModel;
     
+    //测试数据
     //"http://p0.meituan.net/xianfu/75706b131fec44e8c2a8390f43e5a51c83968.jpg.webp(错误的)
     //http://p1.meituan.net/aichequan/e597d736e85846ee41d55440a5a86ad9193992.png.webp
     //_bgImageView = shopPoi_infoModel.pic_url;
     
+    
+    ///设置背景图片
     NSString *bgImageURLStr = [shopPoi_infoModel.poi_back_pic_url stringByDeletingPathExtension];
-    
-    
     //加载网络图片
     [_bgImageView sd_setImageWithURL:[NSURL URLWithString:bgImageURLStr]];
     
+    ///设置商家图片
+    [_avatarImageView sd_setImageWithURL:[NSURL URLWithString:[shopPoi_infoModel.pic_url stringByDeletingPathExtension]]];
+    
+    //设置店名
+    _nameLable.text = shopPoi_infoModel.name;
+    
+    //设置商家公告
+    _bulletinLabel.text = shopPoi_infoModel.bulletin;
+    
+    
+////    //商家轮播的信息
+  _loopView.discounts = shopPoi_infoModel.discounts;
+
+    
     
 }
-
-
 @end

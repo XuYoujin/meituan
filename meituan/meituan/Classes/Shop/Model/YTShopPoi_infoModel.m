@@ -7,7 +7,7 @@
 //
 
 #import "YTShopPoi_infoModel.h"
-
+#import "YTInfoModel.h"
 @implementation YTShopPoi_infoModel
 
 
@@ -22,8 +22,29 @@
     
 }
 
+
+//拦截打折信息
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    
+    if([key isEqualToString:@"discounts2"])
+    {
+        NSArray *arr = value;
+        NSMutableArray *infoArrM = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *dic in arr) {
+            YTInfoModel *infoModel = [YTInfoModel InfoModelWithDict:dic];
+            
+            
+            [infoArrM addObject:infoModel];
+            
+            //NSLog(@"%@",arr);
+        }
+        
+        _discounts = infoArrM;
+        
+        //测试
+        //NSLog(@"%@",_discounts);
+        
+    }
 }
 @end

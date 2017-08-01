@@ -59,6 +59,10 @@
 		CB3D08B91F2E1313006C51A0 /* YTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */; };
 		CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */; };
 		CBAA4B3B1F2E355E00E23A49 /* YTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAA4B3A1F2E355E00E23A49 /* YTNavigationBar.m */; };
+		CBCA715E1F3082A000DCA449 /* UIImage+DashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA715D1F3082A000DCA449 /* UIImage+DashLine.m */; };
+		CBCA71621F309BBD00DCA449 /* YTInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA71611F309BBD00DCA449 /* YTInfoModel.m */; };
+		CBCA71651F309CDA00DCA449 /* YTInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA71641F309CDA00DCA449 /* YTInfoView.m */; };
+		CBCA71681F309D0D00DCA449 /* YTInfoLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA71671F309D0D00DCA449 /* YTInfoLoopView.m */; };
 		CBED4A611F2EA4AB00A64134 /* NSObject+LinearFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */; };
 /* End PBXBuildFile section */
 
@@ -173,6 +177,14 @@
 		CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBaseController.m; sourceTree = "<group>"; };
 		CBAA4B391F2E355E00E23A49 /* YTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavigationBar.h; sourceTree = "<group>"; };
 		CBAA4B3A1F2E355E00E23A49 /* YTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavigationBar.m; sourceTree = "<group>"; };
+		CBCA715C1F3082A000DCA449 /* UIImage+DashLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DashLine.h"; sourceTree = "<group>"; };
+		CBCA715D1F3082A000DCA449 /* UIImage+DashLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DashLine.m"; sourceTree = "<group>"; };
+		CBCA71601F309BBD00DCA449 /* YTInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTInfoModel.h; sourceTree = "<group>"; };
+		CBCA71611F309BBD00DCA449 /* YTInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTInfoModel.m; sourceTree = "<group>"; };
+		CBCA71631F309CDA00DCA449 /* YTInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTInfoView.h; sourceTree = "<group>"; };
+		CBCA71641F309CDA00DCA449 /* YTInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTInfoView.m; sourceTree = "<group>"; };
+		CBCA71661F309D0D00DCA449 /* YTInfoLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTInfoLoopView.h; sourceTree = "<group>"; };
+		CBCA71671F309D0D00DCA449 /* YTInfoLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTInfoLoopView.m; sourceTree = "<group>"; };
 		CBED4A5F1F2EA4AB00A64134 /* NSObject+LinearFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LinearFormula.h"; sourceTree = "<group>"; };
 		CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LinearFormula.m"; sourceTree = "<group>"; };
 		CBED4A621F2EA59F00A64134 /* Additons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Additons.h; sourceTree = "<group>"; };
@@ -329,12 +341,15 @@
 		CB3D08391F2E0A5B006C51A0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CBCA715F1F309B1800DCA449 /* LoopView */,
 				CB07F7441F2F86B900FF5AFC /* UIColor+Addition.h */,
 				CB07F7451F2F86B900FF5AFC /* UIColor+Addition.m */,
 				CB07F7461F2F86B900FF5AFC /* UILabel+Addition.h */,
 				CB07F7471F2F86B900FF5AFC /* UILabel+Addition.m */,
 				CBED4A5F1F2EA4AB00A64134 /* NSObject+LinearFormula.h */,
 				CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */,
+				CBCA715C1F3082A000DCA449 /* UIImage+DashLine.h */,
+				CBCA715D1F3082A000DCA449 /* UIImage+DashLine.m */,
 				CBED4A621F2EA59F00A64134 /* Additons.h */,
 			);
 			path = Common;
@@ -461,6 +476,19 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		CBCA715F1F309B1800DCA449 /* LoopView */ = {
+			isa = PBXGroup;
+			children = (
+				CBCA71601F309BBD00DCA449 /* YTInfoModel.h */,
+				CBCA71611F309BBD00DCA449 /* YTInfoModel.m */,
+				CBCA71631F309CDA00DCA449 /* YTInfoView.h */,
+				CBCA71641F309CDA00DCA449 /* YTInfoView.m */,
+				CBCA71661F309D0D00DCA449 /* YTInfoLoopView.h */,
+				CBCA71671F309D0D00DCA449 /* YTInfoLoopView.m */,
+			);
+			path = LoopView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -567,8 +595,10 @@
 				CB3D088F1F2E0ACA006C51A0 /* AFURLRequestSerialization.m in Sources */,
 				CB3D08A01F2E0ACA006C51A0 /* SDImageCacheConfig.m in Sources */,
 				CB07F75B1F30259900FF5AFC /* YTShopController.m in Sources */,
+				CBCA71621F309BBD00DCA449 /* YTInfoModel.m in Sources */,
 				CBED4A611F2EA4AB00A64134 /* NSObject+LinearFormula.m in Sources */,
 				CB3D088D1F2E0ACA006C51A0 /* AFNetworkReachabilityManager.m in Sources */,
+				CBCA71651F309CDA00DCA449 /* YTInfoView.m in Sources */,
 				CB3D08901F2E0ACA006C51A0 /* AFURLResponseSerialization.m in Sources */,
 				CB3D08941F2E0ACA006C51A0 /* MASConstraintMaker.m in Sources */,
 				CB3D08A31F2E0ACA006C51A0 /* SDWebImageDownloader.m in Sources */,
@@ -578,8 +608,10 @@
 				CB07F7551F2F8BC700FF5AFC /* YTShopInfoController.m in Sources */,
 				CB3D08AC1F2E0ACA006C51A0 /* UIImageView+WebCache.m in Sources */,
 				CB3D08AE1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m in Sources */,
+				CBCA71681F309D0D00DCA449 /* YTInfoLoopView.m in Sources */,
 				CB07F74F1F2F8B9A00FF5AFC /* YTShopOrderController.m in Sources */,
 				CB3D081C1F2DFD22006C51A0 /* main.m in Sources */,
+				CBCA715E1F3082A000DCA449 /* UIImage+DashLine.m in Sources */,
 				CB07F7481F2F86B900FF5AFC /* UIColor+Addition.m in Sources */,
 				CB3D08961F2E0ACA006C51A0 /* MASViewAttribute.m in Sources */,
 				CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */,

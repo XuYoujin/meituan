@@ -44,7 +44,9 @@
 
 - (void)viewDidLoad {
     
-    
+    //加载数据
+    [self loadFoodData];
+
     
     [self setupUI];//投机写法
 
@@ -108,8 +110,6 @@
 - (void)setupUI
 {
     
-    //加载数据
-    [self loadFoodData];
     
     //设置头部视图
     [self settingHeaderView];
@@ -257,6 +257,8 @@
 {
     UIView *shopTagView = [[UIView alloc] init];
     shopTagView.backgroundColor = [UIColor whiteColor];
+    
+    //shopTagView.alpha = 0.2;
     [self.view addSubview:shopTagView];
     
     //设置约束
@@ -395,17 +397,13 @@
     //添加在View 身上
     [self.view addGestureRecognizer:pan];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //赋值
+        //赋值
     _shopHeadView = shopHeadView;
+    
+    
+    
+    //这个小问题,一个小时没了.认真点呀....(给头部视图的模型赋值)
+    _shopHeadView.shopPoi_infoModel = _shopPoi_infoModel;
     
 
 }
@@ -513,10 +511,10 @@
     //根据字典转模型,模型属性< 字典属性会报错
     YTShopPoi_infoModel *shopPoi_infoModel = [YTShopPoi_infoModel shopPoi_infoWithDict:poi_dic];
     
+//    [_shopHeadView setShopPoi_infoModel:shopPoi_infoModel];
+
     
-    _shopHeadView.shopPoi_infoModel = shopPoi_infoModel;
-    
-    
+    //头部视图对于所有模型数据(还要写不需要的)
     _shopPoi_infoModel = shopPoi_infoModel;
     
     
