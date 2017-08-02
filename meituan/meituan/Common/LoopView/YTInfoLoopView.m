@@ -50,7 +50,7 @@
     
     //设置约束
     [infoView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.offset(16);
+        make.left.offset(0);
         make.right.top.bottom.offset(0);
         
     }];
@@ -129,19 +129,12 @@
             
             
             [self scroll];
-            
-            
-            
+
         }];
-        
-        
-        
-        
-        
-        
+      
     });
-    
-    
+
+   // NSLog(@"第三天测试分支");
 }
 
 @end

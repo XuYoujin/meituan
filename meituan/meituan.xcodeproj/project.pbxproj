@@ -59,6 +59,8 @@
 		CB3D08B91F2E1313006C51A0 /* YTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08B81F2E1313006C51A0 /* YTNavigationController.m */; };
 		CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */; };
 		CBAA4B3B1F2E355E00E23A49 /* YTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAA4B3A1F2E355E00E23A49 /* YTNavigationBar.m */; };
+		CBBB3DEB1F3289E6002AE536 /* UIView+UIviewAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEA1F3289E6002AE536 /* UIView+UIviewAddition.m */; };
+		CBBB3DF11F328F73002AE536 /* YTShopDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBB3DEE1F328F73002AE536 /* YTShopDetailController.m */; };
 		CBCA715E1F3082A000DCA449 /* UIImage+DashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA715D1F3082A000DCA449 /* UIImage+DashLine.m */; };
 		CBCA71621F309BBD00DCA449 /* YTInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA71611F309BBD00DCA449 /* YTInfoModel.m */; };
 		CBCA71651F309CDA00DCA449 /* YTInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA71641F309CDA00DCA449 /* YTInfoView.m */; };
@@ -177,6 +179,10 @@
 		CB3D08BB1F2E13CA006C51A0 /* YTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTBaseController.m; sourceTree = "<group>"; };
 		CBAA4B391F2E355E00E23A49 /* YTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNavigationBar.h; sourceTree = "<group>"; };
 		CBAA4B3A1F2E355E00E23A49 /* YTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNavigationBar.m; sourceTree = "<group>"; };
+		CBBB3DE91F3289E6002AE536 /* UIView+UIviewAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIviewAddition.h"; sourceTree = "<group>"; };
+		CBBB3DEA1F3289E6002AE536 /* UIView+UIviewAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIviewAddition.m"; sourceTree = "<group>"; };
+		CBBB3DED1F328F73002AE536 /* YTShopDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopDetailController.h; sourceTree = "<group>"; };
+		CBBB3DEE1F328F73002AE536 /* YTShopDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopDetailController.m; sourceTree = "<group>"; };
 		CBCA715C1F3082A000DCA449 /* UIImage+DashLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DashLine.h"; sourceTree = "<group>"; };
 		CBCA715D1F3082A000DCA449 /* UIImage+DashLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DashLine.m"; sourceTree = "<group>"; };
 		CBCA71601F309BBD00DCA449 /* YTInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTInfoModel.h; sourceTree = "<group>"; };
@@ -300,6 +306,7 @@
 		CB3D08311F2E0832006C51A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CBBB3DE51F3288E4002AE536 /* ShopDetail */,
 				CB3D083B1F2E0A82006C51A0 /* Main */,
 				CB3D08341F2E0832006C51A0 /* Shop */,
 				CB07F74C1F2F8AEF00FF5AFC /* ShopOrder */,
@@ -350,6 +357,8 @@
 				CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */,
 				CBCA715C1F3082A000DCA449 /* UIImage+DashLine.h */,
 				CBCA715D1F3082A000DCA449 /* UIImage+DashLine.m */,
+				CBBB3DE91F3289E6002AE536 /* UIView+UIviewAddition.h */,
+				CBBB3DEA1F3289E6002AE536 /* UIView+UIviewAddition.m */,
 				CBED4A621F2EA59F00A64134 /* Additons.h */,
 			);
 			path = Common;
@@ -476,6 +485,39 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		CBBB3DE51F3288E4002AE536 /* ShopDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CBBB3DEC1F328F73002AE536 /* Controller */,
+				CBBB3DEF1F328F73002AE536 /* Model */,
+				CBBB3DF01F328F73002AE536 /* View */,
+			);
+			path = ShopDetail;
+			sourceTree = "<group>";
+		};
+		CBBB3DEC1F328F73002AE536 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CBBB3DED1F328F73002AE536 /* YTShopDetailController.h */,
+				CBBB3DEE1F328F73002AE536 /* YTShopDetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CBBB3DEF1F328F73002AE536 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CBBB3DF01F328F73002AE536 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CBCA715F1F309B1800DCA449 /* LoopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +614,7 @@
 				CB07F7521F2F8BAF00FF5AFC /* YTShopCommentController.m in Sources */,
 				CB3D08981F2E0ACA006C51A0 /* NSArray+MASAdditions.m in Sources */,
 				CB07F7491F2F86B900FF5AFC /* UILabel+Addition.m in Sources */,
+				CBBB3DEB1F3289E6002AE536 /* UIView+UIviewAddition.m in Sources */,
 				CB3D088E1F2E0ACA006C51A0 /* AFSecurityPolicy.m in Sources */,
 				CB3D08A71F2E0ACA006C51A0 /* UIButton+WebCache.m in Sources */,
 				CB3D08381F2E0832006C51A0 /* AppDelegate.m in Sources */,
@@ -613,6 +656,7 @@
 				CB3D081C1F2DFD22006C51A0 /* main.m in Sources */,
 				CBCA715E1F3082A000DCA449 /* UIImage+DashLine.m in Sources */,
 				CB07F7481F2F86B900FF5AFC /* UIColor+Addition.m in Sources */,
+				CBBB3DF11F328F73002AE536 /* YTShopDetailController.m in Sources */,
 				CB3D08961F2E0ACA006C51A0 /* MASViewAttribute.m in Sources */,
 				CB3D08BC1F2E13CA006C51A0 /* YTBaseController.m in Sources */,
 			);

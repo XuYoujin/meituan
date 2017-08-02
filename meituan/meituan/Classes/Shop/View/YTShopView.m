@@ -12,6 +12,11 @@
 #import "YTShopPoi_infoModel.h"
 #import "YTInfoLoopView.h"
 
+#import "YTShopDetailController.h"
+
+
+
+
 @interface YTShopView ()
 
 //设置轮播视图属性
@@ -170,6 +175,30 @@
     
     //一句话没有赋值,整了很久,多注意思路哦.
     _loopView = loopView;
+    
+    
+    
+    //给loopView添加手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(loopViewClick)];
+    
+    
+    [loopView addGestureRecognizer:tap];
+    
+}
+
+///点击loopView 显示商家详情界面
+- (void)loopViewClick
+{
+    //创建商家详情 并进行modal
+    YTShopDetailController *shopDetailController = [[YTShopDetailController alloc] init];
+    
+    
+    //传值给商家详情
+    shopDetailController.shopPoi_infoModel = _shopPoi_infoModel;
+    
+    [self.viewController presentViewController:shopDetailController animated:YES completion:nil];
+    
+    
     
 }
 
