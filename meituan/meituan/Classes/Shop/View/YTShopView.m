@@ -14,6 +14,7 @@
 
 #import "YTShopDetailController.h"
 
+#import "YTShopDetailTransitonDelegate.h"
 
 
 
@@ -29,6 +30,11 @@
 @property (nonatomic,weak)UILabel *nameLable;
 //设置商家公告
 @property (nonatomic,weak)UILabel *bulletinLabel;
+
+
+//注意设置个属性强引用代理
+@property (nonatomic,strong)YTShopDetailTransitonDelegate *delegate;
+
 
 
 @end
@@ -205,6 +211,25 @@
     
     //传值给商家详情
     shopDetailController.shopPoi_infoModel = _shopPoi_infoModel;
+    
+    
+    //设置转场呈现样式为自定义(默认模态前的View移到其他的地方)
+    shopDetailController.modalPresentationStyle = UIModalPresentationCustom;
+    
+    //自定义模态modal
+    
+    //YTShopDetailTransitonDelegate *delegate = [[YTShopDetailTransitonDelegate alloc] init]; 导致回来没有效果
+    _delegate = [[YTShopDetailTransitonDelegate alloc] init];
+    
+    
+    
+    
+    //设置转场代理
+    shopDetailController.transitioningDelegate = _delegate;
+    
+    
+    
+    
     
     [self.viewController presentViewController:shopDetailController animated:YES completion:nil];
     
