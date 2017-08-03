@@ -18,6 +18,9 @@
 #import "YTShopView.h"
 #import "YTShopPoi_infoModel.h"
 
+//引入点菜界面模型头文件
+#import "YTShopOrderGategoryModel.h"
+
 //定义头部视图高度最大值和最小值
 #define KShopHeadViewMaxHeight 180
 #define KShopHeadViewMinHeight 64
@@ -38,6 +41,11 @@
 
 //设置加载字典属性
 @property (nonatomic,strong)YTShopPoi_infoModel *shopPoi_infoModel;
+
+
+///设置存储点菜组模型的数组属性
+@property (nonatomic,strong)NSArray<YTShopOrderGategoryModel *> *foodDate;
+
 @end
 
 @implementation YTShopController
@@ -152,6 +160,17 @@
     
     //创建三个View并且添加到scrollview中
     YTShopOrderController *orderVC = [[YTShopOrderController alloc] init];
+    
+    
+#pragma mark - 给点菜控制器传数据(正传)
+    orderVC.foodDate = _foodDate;
+    
+    
+    
+    
+    
+    
+    
     YTShopCommentController *commentVC = [[YTShopCommentController alloc] init];
     YTShopInfoController *InfoVC = [[YTShopInfoController alloc] init];
     
@@ -161,6 +180,7 @@
     for (UIViewController *vc in arrVCs) {
         //添加View
         [shopScrollView addSubview:vc.view];
+        
         //建立父子控制器关系
         [self addChildViewController:vc];
         
@@ -516,6 +536,28 @@
     
     //头部视图对于所有模型数据(还要写不需要的)
     _shopPoi_infoModel = shopPoi_infoModel;
+    
+    
+    
+#pragma mark - 加载点菜数据
+    //加载点菜相关数据 (数组)
+    NSArray *food_spu_tags_arr = foodDict[@"data"][@"food_spu_tags"];
+    
+    NSMutableArray *foodDate = [NSMutableArray array];
+    
+    //字典(遍历,字典转模型)
+    for (NSDictionary *dic in food_spu_tags_arr) {
+        
+        YTShopOrderGategoryModel *shopOrderGategoryModel =[YTShopOrderGategoryModel shopOrderGategoryModelWithDict:dic];
+        
+        [foodDate addObject:shopOrderGategoryModel];
+    }
+    
+    //赋值
+     _foodDate= foodDate;
+    
+    
+    
     
     
 }
