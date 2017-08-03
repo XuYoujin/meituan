@@ -30,6 +30,18 @@
 
 
 
+///商家详情添加的
+//起送价属性  min_price_tip
+@property (nonatomic,copy)NSString *min_price_tip;
+
+//设置配送费属性 shipping_fee_tip
+@property (nonatomic,copy)NSString *shipping_fee_tip;
+
+//配送时间avg_delivery_time
+@property (nonatomic,copy)NSString *avg_delivery_time;
+
+
+
 //字典转模型
 + (instancetype)shopPoi_infoWithDict:(NSDictionary *)dict;
 
