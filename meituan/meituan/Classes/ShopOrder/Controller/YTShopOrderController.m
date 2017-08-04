@@ -195,7 +195,7 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
         
 #pragma mark - 点击跳转食物详情界面
         
-//        YTShopDetailController *shopDetailController = [[YTShopDetailController alloc] init];
+        YTShopDetailController *shopDetailController = [[YTShopDetailController alloc] init];
         
         //[self.navigationController pushViewController:shopDetailController animated:YES];
         
