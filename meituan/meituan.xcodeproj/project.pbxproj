@@ -15,6 +15,9 @@
 		CB07F75E1F3025D400FF5AFC /* YTShopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F75D1F3025D400FF5AFC /* YTShopView.m */; };
 		CB07F7601F3054A400FF5AFC /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = CB07F75F1F3054A400FF5AFC /* food.json */; };
 		CB07F7631F3059D100FF5AFC /* YTShopPoi_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07F7621F3059D100FF5AFC /* YTShopPoi_infoModel.m */; };
+		CB29BBBC1F33E37000F01E3B /* YTTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29BBBB1F33E37000F01E3B /* YTTableViewHeaderFooterView.m */; };
+		CB29BBC31F33EC1C00F01E3B /* YTShopOrderFoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB29BBC11F33EC1C00F01E3B /* YTShopOrderFoodCell.m */; };
+		CB29BBC41F33EC1C00F01E3B /* YTShopOrderFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB29BBC21F33EC1C00F01E3B /* YTShopOrderFoodCell.xib */; };
 		CB354F2D1F32BD0A000229D1 /* YTShopDetailTransitonDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB354F2C1F32BD0A000229D1 /* YTShopDetailTransitonDelegate.m */; };
 		CB354F331F32FADD000229D1 /* YTShopOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB354F301F32FADD000229D1 /* YTShopOrderController.m */; };
 		CB354F361F333590000229D1 /* YTShopOrderGategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB354F351F333590000229D1 /* YTShopOrderGategoryModel.m */; };
@@ -89,6 +92,11 @@
 		CB07F7611F3059D100FF5AFC /* YTShopPoi_infoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopPoi_infoModel.h; sourceTree = "<group>"; };
 		CB07F7621F3059D100FF5AFC /* YTShopPoi_infoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopPoi_infoModel.m; sourceTree = "<group>"; };
 		CB07F7641F305DE100FF5AFC /* YTMeiTuanPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTMeiTuanPrefixHeader.pch; sourceTree = "<group>"; };
+		CB29BBBA1F33E37000F01E3B /* YTTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		CB29BBBB1F33E37000F01E3B /* YTTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		CB29BBC01F33EC1C00F01E3B /* YTShopOrderFoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YTShopOrderFoodCell.h; path = ../../../../YTShopOrderFoodCell.h; sourceTree = "<group>"; };
+		CB29BBC11F33EC1C00F01E3B /* YTShopOrderFoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YTShopOrderFoodCell.m; path = ../../../../YTShopOrderFoodCell.m; sourceTree = "<group>"; };
+		CB29BBC21F33EC1C00F01E3B /* YTShopOrderFoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YTShopOrderFoodCell.xib; path = ../../../../YTShopOrderFoodCell.xib; sourceTree = "<group>"; };
 		CB354F2B1F32BD0A000229D1 /* YTShopDetailTransitonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopDetailTransitonDelegate.h; sourceTree = "<group>"; };
 		CB354F2C1F32BD0A000229D1 /* YTShopDetailTransitonDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTShopDetailTransitonDelegate.m; sourceTree = "<group>"; };
 		CB354F2F1F32FADD000229D1 /* YTShopOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTShopOrderController.h; sourceTree = "<group>"; };
@@ -298,8 +306,13 @@
 		CB354F321F32FADD000229D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB29BBC01F33EC1C00F01E3B /* YTShopOrderFoodCell.h */,
+				CB29BBC11F33EC1C00F01E3B /* YTShopOrderFoodCell.m */,
+				CB29BBC21F33EC1C00F01E3B /* YTShopOrderFoodCell.xib */,
 				CB354F3A1F33529A000229D1 /* YTShopOrderGategoryCell.h */,
 				CB354F3B1F33529A000229D1 /* YTShopOrderGategoryCell.m */,
+				CB29BBBA1F33E37000F01E3B /* YTTableViewHeaderFooterView.h */,
+				CB29BBBB1F33E37000F01E3B /* YTTableViewHeaderFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -637,6 +650,7 @@
 				CB07F7601F3054A400FF5AFC /* food.json in Resources */,
 				CB3D082A1F2DFD22006C51A0 /* LaunchScreen.storyboard in Resources */,
 				CB3D08271F2DFD22006C51A0 /* Assets.xcassets in Resources */,
+				CB29BBC41F33EC1C00F01E3B /* YTShopOrderFoodCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +672,7 @@
 				CB3D08A61F2E0ACA006C51A0 /* SDWebImagePrefetcher.m in Sources */,
 				CB3D08911F2E0ACA006C51A0 /* AFURLSessionManager.m in Sources */,
 				CB07F7521F2F8BAF00FF5AFC /* YTShopCommentController.m in Sources */,
+				CB29BBBC1F33E37000F01E3B /* YTTableViewHeaderFooterView.m in Sources */,
 				CB3D08981F2E0ACA006C51A0 /* NSArray+MASAdditions.m in Sources */,
 				CB07F7491F2F86B900FF5AFC /* UILabel+Addition.m in Sources */,
 				CBBB3DEB1F3289E6002AE536 /* UIView+UIviewAddition.m in Sources */,
@@ -699,6 +714,7 @@
 				CB07F7551F2F8BC700FF5AFC /* YTShopInfoController.m in Sources */,
 				CB3D08AC1F2E0ACA006C51A0 /* UIImageView+WebCache.m in Sources */,
 				CB3D08AE1F2E0ACA006C51A0 /* UIView+WebCacheOperation.m in Sources */,
+				CB29BBC31F33EC1C00F01E3B /* YTShopOrderFoodCell.m in Sources */,
 				CBCA71681F309D0D00DCA449 /* YTInfoLoopView.m in Sources */,
 				CB354F3C1F33529A000229D1 /* YTShopOrderGategoryCell.m in Sources */,
 				CB3D081C1F2DFD22006C51A0 /* main.m in Sources */,

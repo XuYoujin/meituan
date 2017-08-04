@@ -12,7 +12,8 @@
 #import "YTShopOrderGategoryModel.h"
 
 #import "YTShopOrderGategoryCell.h"
-
+#import "YTTableViewHeaderFooterView.h"
+#import "YTShopOrderFoodCell.h"
 @interface YTShopOrderController ()<UITableViewDelegate,UITableViewDataSource>
 
 //设置组视图属性
@@ -24,6 +25,7 @@
 
 static NSString *categoryTableViewID = @"categoryTableViewID";
 static NSString *foodTableViewID = @"foodTableViewID";
+static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
 
 
 @implementation YTShopOrderController
@@ -60,7 +62,8 @@ static NSString *foodTableViewID = @"foodTableViewID";
     
     //隐藏分割线
     categoryTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+    //设置组行高
+    categoryTableView.rowHeight = 60;
     
     
     //设置数据源和代理
@@ -86,13 +89,24 @@ static NSString *foodTableViewID = @"foodTableViewID";
         make.left.equalTo(_categoryTableView.mas_right).offset(0);
     }];
     
+    //设置头部视图行高
+    footTableView.sectionHeaderHeight = 30;
+    
+    
+    
     //设置数据源和代理
     footTableView.delegate = self;
     footTableView.dataSource = self;
-    
+    //开启预估行高
+    footTableView.estimatedRowHeight = 120;
     
     //注册cell
-    [footTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:foodTableViewID];
+    [footTableView registerNib:[UINib nibWithNibName:@"YTShopOrderFoodCell" bundle:nil] forCellReuseIdentifier:foodTableViewID];
+    
+    
+    //注册头部视图
+    [footTableView registerClass:[YTTableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:foodTableHeaderViewID];
+    
     
     _foodTableView = footTableView;
 }
@@ -133,10 +147,10 @@ static NSString *foodTableViewID = @"foodTableViewID";
         return cell;
     }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:foodTableViewID forIndexPath:indexPath];
+    YTShopOrderFoodCell *cell = [tableView dequeueReusableCellWithIdentifier:foodTableViewID forIndexPath:indexPath];
     
     //    NSLog(@"%zd --- %zd",indexPath.section,indexPath.row);
-        cell.textLabel.text = _foodDate[indexPath.section].spus[indexPath.row].name;
+        //cell.textLabel.text = _foodDate[indexPath.section].spus[indexPath.row].name;
     
 //    YTShopOrderGategoryModel *shopOrdergategoryModel = _foodDate[indexPath.section];
 //    YTShopOrderFoodModel *shopOrderFoodModel = shopOrdergategoryModel.spus[indexPath.row];
@@ -144,6 +158,15 @@ static NSString *foodTableViewID = @"foodTableViewID";
     
     
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    YTTableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:foodTableHeaderViewID];
+    //设置数据:
+    headerView.shopOrderGategoryModel = _foodDate[section];
+    
+    return headerView;
 }
 
 
