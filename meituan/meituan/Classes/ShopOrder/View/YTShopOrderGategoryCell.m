@@ -60,7 +60,20 @@
     
     self.selectedBackgroundView = selectBGView;
     
-    //UIView *lineView = [uiL]
+    UIView *lineView = [[UIView alloc] init];
+    
+    lineView.backgroundColor = [UIColor primaryYellowColor];
+    
+    [selectBGView addSubview:lineView];
+    
+    //设置约束  黄条view的约束 左0,centerY对齐,宽4,高44
+    [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(0);
+        make.centerY.offset(0);
+        make.height.offset(44);
+        make.width.offset(4);
+        
+    }];
     
     
     

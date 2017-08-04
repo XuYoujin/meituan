@@ -14,12 +14,17 @@
 #import "YTShopOrderGategoryCell.h"
 #import "YTTableViewHeaderFooterView.h"
 #import "YTShopOrderFoodCell.h"
+
+#import "YTShopDetailController.h"
 @interface YTShopOrderController ()<UITableViewDelegate,UITableViewDataSource>
 
 //设置组视图属性
 @property (nonatomic,weak)UITableView *categoryTableView;
 //设置食物视图属性
 @property (nonatomic,weak)UITableView *foodTableView;
+
+//设置选中的@property
+@property (nonatomic,assign)BOOL tableGategoryTableViewClick;
 
 @end
 
@@ -72,6 +77,11 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     
     //注册cell
     [categoryTableView registerClass:[YTShopOrderGategoryCell class] forCellReuseIdentifier:categoryTableViewID];
+    
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    //初始选择第一行
+    [categoryTableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     
     
     _categoryTableView = categoryTableView;
@@ -149,6 +159,11 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     
     YTShopOrderFoodCell *cell = [tableView dequeueReusableCellWithIdentifier:foodTableViewID forIndexPath:indexPath];
     
+    
+    //赋值:
+    cell.shopOrderFoodModel = _foodDate[indexPath.section].spus[indexPath.row];
+    
+    
     //    NSLog(@"%zd --- %zd",indexPath.section,indexPath.row);
         //cell.textLabel.text = _foodDate[indexPath.section].spus[indexPath.row].name;
     
@@ -169,10 +184,59 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     return headerView;
 }
 
+///点击下取消
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if(_foodTableView == tableView)
+    {
+        
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        
+#pragma mark - 点击跳转食物详情界面
+        
+//        YTShopDetailController *shopDetailController = [[YTShopDetailController alloc] init];
+        
+        //[self.navigationController pushViewController:shopDetailController animated:YES];
+        
+ 
+    }
+    
+    if(_categoryTableView == tableView)
+    {
+        _tableGategoryTableViewClick = YES;
+        NSIndexPath *foodIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
+        [_foodTableView selectRowAtIndexPath:foodIndexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
+    }
+    
+    
+    
+}
 
 
+///一直滚动方法
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //先判断哪个表格滚动,可以得到可见的索引, food组  gategory行
+    if(_foodTableView == scrollView && _tableGategoryTableViewClick == NO)
+    {
+        NSIndexPath *indexPathTop = [[_foodTableView indexPathsForVisibleRows]firstObject];
+        
+        NSIndexPath *categoryIndexPath = [NSIndexPath indexPathForRow:indexPathTop.section inSection:0];
+        //NSLog(@"%zd",categoryIndexPath.row);
+        
+        //好东西,一点点都是技巧呀.
+        [_categoryTableView selectRowAtIndexPath:categoryIndexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    }
+    
+    
+}
 
-
+//结束动漫滚动把点击值恢复
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    _tableGategoryTableViewClick = NO;
+}
 
 
 

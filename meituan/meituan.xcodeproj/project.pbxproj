@@ -73,6 +73,8 @@
 		CBCA71651F309CDA00DCA449 /* YTInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA71641F309CDA00DCA449 /* YTInfoView.m */; };
 		CBCA71681F309D0D00DCA449 /* YTInfoLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBCA71671F309D0D00DCA449 /* YTInfoLoopView.m */; };
 		CBED4A611F2EA4AB00A64134 /* NSObject+LinearFormula.m in Sources */ = {isa = PBXBuildFile; fileRef = CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */; };
+		CBFC75871F346781006EB72B /* countView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBFC75861F346781006EB72B /* countView.xib */; };
+		CBFC758A1F3468A2006EB72B /* YTCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFC75891F3468A2006EB72B /* YTCountView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +216,9 @@
 		CBED4A5F1F2EA4AB00A64134 /* NSObject+LinearFormula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LinearFormula.h"; sourceTree = "<group>"; };
 		CBED4A601F2EA4AB00A64134 /* NSObject+LinearFormula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LinearFormula.m"; sourceTree = "<group>"; };
 		CBED4A621F2EA59F00A64134 /* Additons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Additons.h; sourceTree = "<group>"; };
+		CBFC75861F346781006EB72B /* countView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = countView.xib; sourceTree = "<group>"; };
+		CBFC75881F3468A2006EB72B /* YTCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTCountView.h; sourceTree = "<group>"; };
+		CBFC75891F3468A2006EB72B /* YTCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTCountView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +318,9 @@
 				CB354F3B1F33529A000229D1 /* YTShopOrderGategoryCell.m */,
 				CB29BBBA1F33E37000F01E3B /* YTTableViewHeaderFooterView.h */,
 				CB29BBBB1F33E37000F01E3B /* YTTableViewHeaderFooterView.m */,
+				CBFC75861F346781006EB72B /* countView.xib */,
+				CBFC75881F3468A2006EB72B /* YTCountView.h */,
+				CBFC75891F3468A2006EB72B /* YTCountView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,8 +369,8 @@
 		CB3D08311F2E0832006C51A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CB07F74C1F2F8AEF00FF5AFC /* ShopOrder */,
 				CBBB3DE51F3288E4002AE536 /* ShopDetail */,
+				CB07F74C1F2F8AEF00FF5AFC /* ShopOrder */,
 				CB3D083B1F2E0A82006C51A0 /* Main */,
 				CB3D08341F2E0832006C51A0 /* Shop */,
 				CB07F74A1F2F8AEF00FF5AFC /* ShopComment */,
@@ -650,6 +658,7 @@
 				CB07F7601F3054A400FF5AFC /* food.json in Resources */,
 				CB3D082A1F2DFD22006C51A0 /* LaunchScreen.storyboard in Resources */,
 				CB3D08271F2DFD22006C51A0 /* Assets.xcassets in Resources */,
+				CBFC75871F346781006EB72B /* countView.xib in Resources */,
 				CB29BBC41F33EC1C00F01E3B /* YTShopOrderFoodCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,6 +698,7 @@
 				CB3D08AD1F2E0ACA006C51A0 /* UIView+WebCache.m in Sources */,
 				CB354F331F32FADD000229D1 /* YTShopOrderController.m in Sources */,
 				CB3D08931F2E0ACA006C51A0 /* MASConstraint.m in Sources */,
+				CBFC758A1F3468A2006EB72B /* YTCountView.m in Sources */,
 				CB3D08A81F2E0ACA006C51A0 /* UIImage+GIF.m in Sources */,
 				CB3D089E1F2E0ACA006C51A0 /* NSImage+WebCache.m in Sources */,
 				CB3D08991F2E0ACA006C51A0 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,

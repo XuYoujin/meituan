@@ -19,10 +19,13 @@
     
 }
 
-
+//有个值不一样所以拦截下
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    
+    if([key isEqualToString:@"description"])
+    {
+        _desc = value;
+    }
 }
 
 @end

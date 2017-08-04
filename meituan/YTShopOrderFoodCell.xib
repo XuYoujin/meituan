@@ -19,21 +19,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_food_loading" translatesAutoresizingMaskIntoConstraints="NO" id="FBk-GN-X0U">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_food_loading" translatesAutoresizingMaskIntoConstraints="NO" id="FBk-GN-X0U">
                         <rect key="frame" x="16" y="16" width="64" height="64"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="64" id="KtZ-v7-2cl"/>
                             <constraint firstAttribute="height" constant="64" id="rt9-ke-2eH"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="妈妈的土豆丝" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scz-SK-PvW">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="妈妈的土豆丝" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scz-SK-PvW">
                         <rect key="frame" x="88" y="16" width="92" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="妈妈的味道,你知道的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap5-01-jtt">
-                        <rect key="frame" x="88" y="42" width="124" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="妈妈的味道,你知道的" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap5-01-jtt">
+                        <rect key="frame" x="88" y="42" width="216" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -62,6 +62,7 @@
                     <constraint firstItem="scz-SK-PvW" firstAttribute="top" secondItem="FBk-GN-X0U" secondAttribute="top" id="3vw-jV-Zt2"/>
                     <constraint firstItem="FBk-GN-X0U" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="6M1-Ea-Pca"/>
                     <constraint firstItem="FDF-wm-62E" firstAttribute="leading" secondItem="V4W-0x-TjI" secondAttribute="trailing" constant="8" id="9yl-ij-iAK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ap5-01-jtt" secondAttribute="trailing" constant="8" id="Ceb-9e-oQs"/>
                     <constraint firstItem="9pj-sW-Pfb" firstAttribute="leading" secondItem="V4W-0x-TjI" secondAttribute="leading" id="DEd-5c-GRo"/>
                     <constraint firstItem="V4W-0x-TjI" firstAttribute="top" secondItem="Ap5-01-jtt" secondAttribute="bottom" constant="8" id="EU0-sn-ltf"/>
                     <constraint firstItem="FBk-GN-X0U" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="HFh-l0-g47"/>
@@ -73,6 +74,15 @@
                     <constraint firstItem="V4W-0x-TjI" firstAttribute="leading" secondItem="Ap5-01-jtt" secondAttribute="leading" id="zL9-xM-v6Q"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="descLabel" destination="Ap5-01-jtt" id="RcU-Ky-quT"/>
+                <outlet property="descTopConstraint" destination="KhK-xs-RSv" id="pb5-CJ-vGU"/>
+                <outlet property="min_priceLabel" destination="9pj-sW-Pfb" id="Gu3-iw-aDs"/>
+                <outlet property="month_saled_contect" destination="V4W-0x-TjI" id="cj2-hm-KSF"/>
+                <outlet property="nameLable" destination="scz-SK-PvW" id="x4V-kt-2O1"/>
+                <outlet property="pictureImageView" destination="FBk-GN-X0U" id="Q0a-Tr-NAT"/>
+                <outlet property="praise_numLabel" destination="FDF-wm-62E" id="uZ6-Wj-ALI"/>
+            </connections>
             <point key="canvasLocation" x="-45" y="74.5"/>
         </tableViewCell>
     </objects>

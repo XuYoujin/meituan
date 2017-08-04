@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class YTShopOrderFoodModel;
 @interface YTShopOrderFoodCell : UITableViewCell
-
+@property (nonatomic,strong)YTShopOrderFoodModel *shopOrderFoodModel;
 @end
