@@ -49,6 +49,10 @@
 ///设置点菜控制器属性
 @property (nonatomic,weak)YTShopOrderController *orderVC;
 
+
+///设置导航栏属性
+
+
 @end
 
 @implementation YTShopController
@@ -56,10 +60,10 @@
 - (void)viewDidLoad {
     
     //加载数据
-    [self loadFoodData];
+    //[self loadFoodData];
+    [self loadNetWorkDate];
     
     
-    [self setupUI];//投机写法
     
     
     [super viewDidLoad];
@@ -131,6 +135,8 @@
     //设置滚动视图
     [self settingShopScrollView];
     
+    
+    [self.view bringSubviewToFront:self.naviBar];
 }
 #pragma mark - 设置滚动视图
 - (void)settingShopScrollView
@@ -571,7 +577,51 @@
 #pragma make - 加载网络数据
 - (void)loadNetWorkDate
 {
-    
+    [[AFHTTPSessionManager manager] GET:@"https://raw.githubusercontent.com/XuYoujin/meituan/fiveDay/meituan/food.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * foodDict) {
+        
+        //取得想要自己数据
+        //data poi_info
+        NSDictionary *poi_dic = foodDict[@"data"][@"poi_info"];
+        
+        
+        //根据字典转模型,模型属性< 字典属性会报错
+        YTShopPoi_infoModel *shopPoi_infoModel = [YTShopPoi_infoModel shopPoi_infoWithDict:poi_dic];
+        
+        //    [_shopHeadView setShopPoi_infoModel:shopPoi_infoModel];
+        
+        
+        //头部视图对于所有模型数据(还要写不需要的)
+        _shopPoi_infoModel = shopPoi_infoModel;
+        
+        
+        
+#pragma mark - 加载点菜数据
+        //加载点菜相关数据 (数组)
+        NSArray *food_spu_tags_arr = foodDict[@"data"][@"food_spu_tags"];
+        
+        NSMutableArray *foodDate = [NSMutableArray array];
+        
+        //字典(遍历,字典转模型)
+        for (NSDictionary *dic in food_spu_tags_arr) {
+            
+            YTShopOrderGategoryModel *shopOrderGategoryModel =[YTShopOrderGategoryModel shopOrderGategoryModelWithDict:dic];
+            
+            [foodDate addObject:shopOrderGategoryModel];
+        }
+        
+        //赋值
+        _foodDate= foodDate;
+        
+        
+        [self setupUI];//投机写法
+
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if(error)
+        {
+            NSLog(@"%@",error);
+        }
+    }];
 }
 
 
