@@ -54,10 +54,10 @@
     
     //加载数据
     [self loadFoodData];
-
+    
     
     [self setupUI];//投机写法
-
+    
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -91,7 +91,7 @@
     
     //赋值
     _shareBtn = shareButtonItem;
-
+    
 }
 
 
@@ -108,7 +108,7 @@
 //测试点击跳转下面界面
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 //{
-//    
+//
 //    YTFoodDetailController *foodDetailController = [[YTFoodDetailController alloc] init];
 //    [self.navigationController pushViewController:foodDetailController animated:YES];
 //}
@@ -194,8 +194,8 @@
         make.top.bottom.offset(0);
         
         //为了设置contentsize,设置宽高
-//        make.height.mas_offset(shopScrollView.mas_height);
-//        make.width.mas_offset(shopScrollView.mas_width);
+        //        make.height.mas_offset(shopScrollView.mas_height);
+        //        make.width.mas_offset(shopScrollView.mas_width);
         
         //make.height.mas_equalTo(shopScrollView);
         
@@ -219,16 +219,16 @@
     //NSLog(@"是是是");
     //设置页数(小数)
     CGFloat page = scrollView.contentOffset.x / scrollView.bounds.size.width;
-        //距离
+    //距离
     CGFloat x = (_shopTagView.bounds.size.width) / (_shopTagView.subviews.count - 1);
     
     //NSLog(@"%f",x);
-
+    
     //小黄条移动距离 (实现小黄条和滚动视图联动)
     _shopTagLineView.transform = CGAffineTransformMakeTranslation(page * x, 0);
     
     //_shopTagLineView.transform = CGAffineTransformTranslate(_shopTagLineView.transform,scrollView.contentOffset.x/scrollView.bounds.size.width * page, 0);
-
+    
     
 }
 
@@ -246,8 +246,8 @@
             
             //设置字体
             btn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-
-        
+            
+            
         }
         else
         {
@@ -255,11 +255,11 @@
             
             //设置字体
             btn.titleLabel.font = [UIFont systemFontOfSize:14];
-
+            
         }
-
+        
     }
-
+    
 }
 
 //动漫结束后,实现此方法,设置点击按钮字体联动
@@ -292,9 +292,9 @@
     //_shopHeadView = shopTagView;  你厉害,搞个大乌龙
     
     _shopTagView = shopTagView;
-
     
-   UIButton *orderBtn = [self makeShopTagViewButtonWithTitle:@"点菜"];
+    
+    UIButton *orderBtn = [self makeShopTagViewButtonWithTitle:@"点菜"];
     
     //默认第一个为粗体
     orderBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
@@ -308,7 +308,7 @@
     
     //设置约束
     [shopTagView.subviews mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.top.bottom.offset(0);
         
     }];
@@ -360,7 +360,7 @@
     
     //设置btn的tag.
     btn.tag = _shopTagView.subviews.count;
-
+    
     
     //添加到父控件中
     [_shopTagView addSubview:btn];
@@ -383,7 +383,7 @@
     
     //点击滚动到响应视图
     //_shopScrollView.contentOffset.x = offx;
-//    setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated;
+    //    setContentOffset:(CGPoint)contentOffset animated:(BOOL)animated;
     CGPoint point = CGPointMake(offx, 0);
     
     [_shopScrollView setContentOffset:point animated:YES];
@@ -417,7 +417,7 @@
     //添加在View 身上
     [self.view addGestureRecognizer:pan];
     
-        //赋值
+    //赋值
     _shopHeadView = shopHeadView;
     
     
@@ -425,7 +425,7 @@
     //这个小问题,一个小时没了.认真点呀....(给头部视图的模型赋值)
     _shopHeadView.shopPoi_infoModel = _shopPoi_infoModel;
     
-
+    
 }
 
 
@@ -464,8 +464,8 @@
     /**
      导航条:   y = a * x + b;
      
-    0  180
-    1  64
+     0  180
+     1  64
      
      0  180 * x +b
      1  64 * x + b
@@ -475,9 +475,9 @@
      a =  1/ (64- 180) = - 1/ 116
      
      b = - 180 / (64 - 180) =  180/116
-    
-    
-    */
+     
+     
+     */
     //CGFloat alpha = -1 / 116.0 * newHeight + 180 / 116.0;
     
     //CGFloat alpha = [self resultWithConsult:newHeight andConsult1:180 andResult1:0 andConsult2:64 andResult2:1];
@@ -492,7 +492,7 @@
     self.naviBar.titleTextAttributes =  @{NSForegroundColorAttributeName:[UIColor colorWithWhite:0.4 alpha:alpha]};
     
     CGFloat white =  [@(newHeight)resultWithValue1:YTValueMake(180, 1) andValue2:YTValueMake(64, 0.4)];
-
+    
     //让分享按钮渐变
     self.naviBar.tintColor = [UIColor colorWithWhite:white alpha:1];
     
@@ -505,9 +505,9 @@
     else if (newHeight == KShopHeadViewMinHeight && self.statusBarStyle != UIStatusBarStyleDefault)
     {
         self.statusBarStyle = UIStatusBarStyleDefault;
-
+        
     }
-
+    
     
     
     
@@ -531,8 +531,8 @@
     //根据字典转模型,模型属性< 字典属性会报错
     YTShopPoi_infoModel *shopPoi_infoModel = [YTShopPoi_infoModel shopPoi_infoWithDict:poi_dic];
     
-//    [_shopHeadView setShopPoi_infoModel:shopPoi_infoModel];
-
+    //    [_shopHeadView setShopPoi_infoModel:shopPoi_infoModel];
+    
     
     //头部视图对于所有模型数据(还要写不需要的)
     _shopPoi_infoModel = shopPoi_infoModel;
@@ -554,7 +554,7 @@
     }
     
     //赋值
-     _foodDate= foodDate;
+    _foodDate= foodDate;
     
     
     
@@ -574,13 +574,13 @@
 
 //- (CGFloat)resultWithConsult:(CGFloat)consult andConsult1:(CGFloat)consult1 andResult1:(CGFloat)result1 andConsult2:(CGFloat)consult2 andResult2:(CGFloat)result2
 //{
-//    
+//
 //    CGFloat a = (result1 - result2) / (consult1 - consult2);
-//    
+//
 //    CGFloat b = result1 - a * consult1;
-//    
+//
 //    return a * consult + b;
-//    
+//
 //
 //}
 
@@ -592,13 +592,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

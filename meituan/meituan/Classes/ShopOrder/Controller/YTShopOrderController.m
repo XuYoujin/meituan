@@ -15,7 +15,7 @@
 #import "YTTableViewHeaderFooterView.h"
 #import "YTShopOrderFoodCell.h"
 
-#import "YTShopDetailController.h"
+#import "YTFoodDetailController.h"
 @interface YTShopOrderController ()<UITableViewDelegate,UITableViewDataSource>
 
 //设置组视图属性
@@ -195,9 +195,13 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
         
 #pragma mark - 点击跳转食物详情界面
         
-        YTShopDetailController *shopDetailController = [[YTShopDetailController alloc] init];
+        YTFoodDetailController *foodDetailController = [[YTFoodDetailController alloc] init];
+        //传数据
+        foodDetailController.foodDate = _foodDate;
+        //传索引
+        foodDetailController.indexPath = indexPath;
         
-        //[self.navigationController pushViewController:shopDetailController animated:YES];
+        [self.navigationController pushViewController:foodDetailController animated:YES];
         
  
     }

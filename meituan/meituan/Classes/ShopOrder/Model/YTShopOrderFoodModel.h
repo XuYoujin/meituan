@@ -28,5 +28,12 @@
 @property (nonatomic,assign)float count;
 
 
+//tread_num   praise_num_new
+//差评
+@property (nonatomic,assign)CGFloat tread_num;
+
+//好评
+@property (nonatomic,assign)CGFloat praise_num_new;
+
 + (instancetype)shopOrderFoodModelWithDict:(NSDictionary *)dict;
 @end
