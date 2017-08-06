@@ -13,6 +13,7 @@
 #import "YTInfoView.h"
 
 
+
 #define KMargin 16
 
 //重写scrollview
@@ -49,8 +50,7 @@
     
     [self setupUI];
     
-    
-    
+        
 }
 
 //创建界面

@@ -15,4 +15,6 @@
 ///设置存储点菜组模型的数组属性
 @property (nonatomic,strong)NSArray<YTShopOrderGategoryModel *> *foodDate;
 
+//数组(包两个tableView)
+@property (nonatomic,strong)NSArray *tableViews;
 @end

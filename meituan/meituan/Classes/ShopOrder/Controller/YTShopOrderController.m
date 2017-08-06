@@ -69,6 +69,9 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     [self settingCategoryTableView];
     //设置食物表格
     [self settingFoodTableView];
+    
+    
+    _tableViews = @[_categoryTableView,_foodTableView];
 }
 
 
@@ -248,6 +251,9 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
         foodDetailController.foodDate = _foodDate;
         //传索引
         foodDetailController.indexPath = indexPath;
+        
+        //给食物详情购物车传数据(_shopCarModel不能用,不然会有个NIll)
+        foodDetailController.shopCarModel = self.shopCarModel;
         
         [self.navigationController pushViewController:foodDetailController animated:YES];
         

@@ -100,8 +100,13 @@
 {
     _shopCarModel = shopCarModel;
     
+    
+    ///
+    ///NSNumber *sum_price = [shopCarModel.foodModelArray valueForKeyPath:@"@sum.min_price"];
+    
     //用于数组
     NSNumber *sun_price = [shopCarModel.shopfoodModelArr valueForKeyPath:@"@sum.min_price"];
+    
     
     _sum_valueLabel.text = [@"¥ " stringByAppendingFormat:@"%@",sun_price];
     
@@ -153,7 +158,7 @@
     
     CGPoint controlPoint = CGPointMake(starPoit.x - 100 , starPoit.y - 150);
     //设置动漫时间
-    keyframeAnim.duration = 2;
+    keyframeAnim.duration = 0.5;
     //设置动漫次数
     keyframeAnim.repeatCount = 1;
     

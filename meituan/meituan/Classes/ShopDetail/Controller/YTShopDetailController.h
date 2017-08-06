@@ -11,4 +11,8 @@
 @interface YTShopDetailController : UIViewController
 //设置模型,用来接收数据
 @property (nonatomic,strong)YTShopPoi_infoModel *shopPoi_infoModel;
+
+
+
+
 @end

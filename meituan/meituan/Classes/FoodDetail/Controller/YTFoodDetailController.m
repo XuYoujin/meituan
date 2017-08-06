@@ -13,6 +13,8 @@
 #import "YTShopOrderFoodModel.h"
 #import "YTShopOrderGategoryModel.h"
 #import "YTFoodDetailCell.h"
+
+#import "YTShopCar.h"//引入购物车
 @interface YTFoodDetailController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @end
@@ -38,8 +40,30 @@ static NSString *foodDetailCellID = @"foodDetailCellID";
     //让系统不要内缩
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    YTShopCar *shopCar = [YTShopCar shopCar];//创建购物
+    //添加父控件并设置约束
+    [self.view addSubview:shopCar];
+    
+    [shopCar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.offset(0);
+        make.height.offset(shopCar.bounds.size.height);
+    }];
+
+    shopCar.shopCarModel = _shopCarModel;
+   
     
 }
+
+//- (void)setShopCarModel:(YTShopCarModel *)shopCarModel
+//{
+//    _shopCarModel = shopCarModel;
+//    
+//    
+//}
+
+
+
+
 
 - (void)setupUI
 {

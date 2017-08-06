@@ -26,7 +26,7 @@
 #define KShopHeadViewMinHeight 64
 
 
-@interface YTShopController ()<UIScrollViewDelegate>
+@interface YTShopController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 //定义头部视图属性,方便后面平移使用
 @property (nonatomic,weak)YTShopView *shopHeadView;
 //设置导航栏属性
@@ -45,6 +45,9 @@
 
 ///设置存储点菜组模型的数组属性
 @property (nonatomic,strong)NSArray<YTShopOrderGategoryModel *> *foodDate;
+
+///设置点菜控制器属性
+@property (nonatomic,weak)YTShopOrderController *orderVC;
 
 @end
 
@@ -165,7 +168,7 @@
 #pragma mark - 给点菜控制器传数据(正传)
     orderVC.foodDate = _foodDate;
     
-    
+    _orderVC = orderVC;
     
     
     
@@ -420,6 +423,9 @@
     //赋值
     _shopHeadView = shopHeadView;
     
+    //给pan手势添加代理
+    pan.delegate = self;
+    
     
     
     //这个小问题,一个小时没了.认真点呀....(给头部视图的模型赋值)
@@ -432,34 +438,81 @@
 #pragma mark - 给View添加平移手势.
 - (void)panGesture:(UIPanGestureRecognizer *)pan
 {
-    //NSLog(@"---");
-    //CGPoint p = [pan locationInView:pan.view];//为啥还能调用???
+    
+    
+    if(_shopScrollView.dragging == YES)
+    {
+        return;
+    }
+    
+    for (UITableView *tv in _orderVC.tableViews) {
+        if(tv.contentOffset.y < 0)
+            return;
+    }
+    
+    
     CGPoint p = [pan translationInView:pan.view];
     
     
     CGFloat newHeight = _shopHeadView.bounds.size.height;//本身有累加
+
+    switch (pan.state) {
+        case UIGestureRecognizerStateBegan:
+        case UIGestureRecognizerStateChanged:
+            
+            //通过约束来设置高(随时变化)
+            [_shopHeadView mas_updateConstraints:^(MASConstraintMaker *make) {
+                
+                if(newHeight + p.y < KShopHeadViewMinHeight)
+                {
+                    make.height.offset(64);
+                }
+                else if(newHeight + p.y >= KShopHeadViewMaxHeight)
+                {
+                    make.height.offset(KShopHeadViewMaxHeight);
+                }
+                else
+                {
+                    make.height.offset(newHeight + p.y);
+                }
+                
+                
+            }];
+            
+            //回复P的值
+            [pan setTranslation:CGPointZero inView:pan.view];
+            break;
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateFailed:
+        case UIGestureRecognizerStateCancelled:
+        {
+            //大于头部视图中间让头部视图全部显示,小于则不显示
+            CGFloat shopHeaderViewMiddleHeight = (KShopHeadViewMaxHeight - KShopHeadViewMinHeight) * 0.5 + KShopHeadViewMinHeight;
+            [_shopHeadView mas_updateConstraints:^(MASConstraintMaker *make) {
+                if(self.shopHeadView.bounds.size.height > shopHeaderViewMiddleHeight)
+                    make.height.offset(KShopHeadViewMaxHeight);
+                else
+                    make.height.offset(KShopHeadViewMinHeight);
+                
+            }];
+            
+            [UIView animateWithDuration:0.25 animations:^{
+                [self.view layoutIfNeeded];
+            }];
+            
+        }
+            break;
+        default:
+            break;
+    }
+    //重新获得高度
+    newHeight = _shopHeadView.bounds.size.height;//本身有累加
     
-    //通过约束来设置高(随时变化)
-    [_shopHeadView mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-        if(newHeight + p.y < KShopHeadViewMinHeight)
-        {
-            make.height.offset(64);
-        }
-        else if(newHeight + p.y >= KShopHeadViewMaxHeight)
-        {
-            make.height.offset(KShopHeadViewMaxHeight);
-        }
-        else
-        {
-            make.height.offset(newHeight + p.y);
-        }
-        
-        
-    }];
     
-    //回复P的值
-    [pan setTranslation:CGPointZero inView:pan.view];
+    
+    
+    //NSLog(@"---");
+    //CGPoint p = [pan locationInView:pan.view];//为啥还能调用???
     
     /**
      导航条:   y = a * x + b;
@@ -515,6 +568,15 @@
     
 }
 
+#pragma make - 加载网络数据
+- (void)loadNetWorkDate
+{
+    
+}
+
+
+
+
 #pragma mark - 加载数据
 - (void)loadFoodData
 {
@@ -563,7 +625,10 @@
 }
 
 
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
 
 
 
