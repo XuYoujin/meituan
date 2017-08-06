@@ -69,11 +69,29 @@
     _foodModel.count--;
     
     [self updateDate];
+    
+    //设置按钮类型
+    _type = YTCountViewBtnTypeMinusBtn;
+    
+    if([self.delegate respondsToSelector:@selector(countViewValueChage:)])
+    {
+        [self.delegate countViewValueChage:self];
+    }
+    
 }
 //点击增加按钮
 - (IBAction)addBtnClick:(id)sender {
     _foodModel.count++;
     [self updateDate];
+    
+    //设置按钮类型
+    _type = YTCountViewBtnTypeAddBtn;
+    
+    if([self.delegate respondsToSelector:@selector(countViewValueChage:)])
+    {
+        [self.delegate countViewValueChage:self];
+    }
+
 }
 
 //更新数据

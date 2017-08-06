@@ -16,6 +16,9 @@
 #import "YTShopOrderFoodCell.h"
 
 #import "YTFoodDetailController.h"
+
+#import "YTShopCar.h"
+#import "YTShopCarModel.h"
 @interface YTShopOrderController ()<UITableViewDelegate,UITableViewDataSource>
 
 //设置组视图属性
@@ -25,6 +28,14 @@
 
 //设置选中的@property
 @property (nonatomic,assign)BOOL tableGategoryTableViewClick;
+
+//设置购物车属性
+@property (nonatomic,weak)YTShopCar *shopCar;
+
+//设置个存储加进来foodModel的购物车模型(代理是控制器,后面取赋值)
+@property (nonatomic,strong)YTShopCarModel *shopCarModel;
+
+
 
 @end
 
@@ -43,13 +54,42 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     
     [self setup];
     
+    
+    //将购物车界面置顶
+    [self.view bringSubviewToFront:_shopCar];
+    
 }
 //设置主界面
 - (void)setup
 {
+    //设置购物车
+    [self settingShopCarView];
+    
+    //设置食物类表格
     [self settingCategoryTableView];
+    //设置食物表格
     [self settingFoodTableView];
 }
+
+
+///添加购物传界面
+- (void)settingShopCarView
+{
+    YTShopCar *shopCar = [YTShopCar shopCar];
+    
+    //加入父控件,并设置约束
+    [self.view addSubview:shopCar];
+    
+    [shopCar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.offset(0);
+        make.height.offset(shopCar.bounds.size.height);
+    }];
+    
+    _shopCar = shopCar;
+}
+
+
+
 
 //设置左边categorytableView
 - (void)settingCategoryTableView
@@ -60,8 +100,10 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     
     //设置约束
     [categoryTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.offset(0);
+        make.top.left.offset(0);
         make.width.offset(100);
+        
+        make.bottom.equalTo(_shopCar.mas_top).offset(0);
         
     }];
     
@@ -95,8 +137,11 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     
     //设置约束
     [footTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.right.bottom.offset(0);
+        make.top.right.offset(0);
         make.left.equalTo(_categoryTableView.mas_right).offset(0);
+        
+        make.bottom.equalTo(_shopCar.mas_top).offset(0);
+
     }];
     
     //设置头部视图行高
@@ -158,6 +203,9 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
     }
     
     YTShopOrderFoodCell *cell = [tableView dequeueReusableCellWithIdentifier:foodTableViewID forIndexPath:indexPath];
+    
+    //设置代理(将countView抛出)
+    cell.countView.delegate = self;
     
     
     //赋值:
@@ -243,11 +291,55 @@ static NSString *foodTableHeaderViewID = @"foodTableHeaderViewID";
 }
 
 
+#warning mark - countView代理方法.
+///实现代理的方法
+- (void)countViewValueChage:(YTCountView *)countView
+{
+    //根据传出的类型来判断值
+    switch (countView.type) {
+        case YTCountViewBtnTypeAddBtn:
+            //存模型
+            [self.shopCarModel.shopfoodModelArr addObject:countView.foodModel];
+            
+            //NSLog(@"%@",self.shopCarModel.shopfoodModelArr);
+            
+            //坐标转换
+            CGPoint starPoint = [countView convertPoint:countView.addBtn.center toView:_shopCar];
+            
+            //调用动漫方法
+            [self.shopCar animWithStarPoint:starPoint];
+            
+            
+            
+            
+            
+            break;
+        case YTCountViewBtnTypeMinusBtn:
+            //存模型
+            [self.shopCarModel.shopfoodModelArr removeObjectAtIndex:[_shopCar.shopCarModel.shopfoodModelArr indexOfObject:countView.foodModel]];
+            
+            //NSLog(@"%@",self.shopCarModel.shopfoodModelArr);
+            
+            break;
 
+            
+        default:
+            break;
+    }
+    
+    //传值给shopCarView
+    _shopCar.shopCarModel = self.shopCarModel;
+}
 
-
-
-
+//实例化模型
+- (YTShopCarModel *)shopCarModel
+{
+    if(_shopCarModel == nil)
+    {
+        _shopCarModel = [[YTShopCarModel alloc] init];
+    }
+    return _shopCarModel;
+}
 
 
 

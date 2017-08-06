@@ -31,8 +31,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *descTopConstraint;
 
 
-//设置计数View的属性
-@property (nonatomic,weak)YTCountView *countView;
 
 @end
 

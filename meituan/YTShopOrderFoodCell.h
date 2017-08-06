@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-@class YTShopOrderFoodModel;
+@class YTShopOrderFoodModel,YTCountView;
 @interface YTShopOrderFoodCell : UITableViewCell
+//设置食物模型
 @property (nonatomic,strong)YTShopOrderFoodModel *shopOrderFoodModel;
+
+
+//设置计数View的属性
+@property (nonatomic,weak)YTCountView *countView;
+
 @end
